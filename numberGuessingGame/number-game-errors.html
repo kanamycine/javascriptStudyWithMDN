@@ -41,10 +41,10 @@
 </body>
 
 <script>
-  var randomNumber = Math.floor(Math.random()) + 1;
+  var randomNumber = Math.floor(Math.random()*100) + 1;
   var guesses = document.querySelector('.guesses');
   var lastResult = document.querySelector('.lastResult');
-  var lowOrHi = document.querySelector('lowOrHi');
+  var lowOrHi = document.querySelector('.lowOrHi');
   var guessSubmit = document.querySelector('.guessSubmit');
   var guessField = document.querySelector('.guessField');
   var guessCount = 1;
@@ -79,7 +79,7 @@
     guessField.value = '';
     guessField.focus();
   }
-  guessSubmit.addeventListener('click', checkGuess);
+  guessSubmit.addEventListener('click', checkGuess);
 
   function setGameOver() {
 	  guessField.disabled = true;
@@ -87,7 +87,7 @@
 	  resetButton = document.createElement('button');
 	  resetButton.textContent = 'Start new game';
 	  document.body.appendChild(resetButton);
-	  resetButton.addeventListener('click', resetGame);
+	  resetButton.addEventListener('click', resetGame);
   }
 
   function resetGame() {
